@@ -1,0 +1,99 @@
+body {
+    background: rgb(243, 243, 243);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background: rgb(70, 99, 230);
+    padding: 10px 20px;
+    width: 99%;
+    margin-top: -8px;
+    height: 70px;
+    margin-left: -8px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav img {
+    width: 150px;
+}
+
+nav input {
+    flex-grow: 1;
+    width: 500px;
+    height: 50px;
+    margin-left: 800px;
+    border: none;
+    border-radius: 30px;
+    background: rgb(243, 243, 243);
+}
+
+#fotoPerfil img {
+    width: 55px;
+    height: 55px;
+    background: rgb(243, 243, 243);
+    border-radius: 50%;
+    margin-top: 3px;
+    margin-left: 50px;
+}
+
+@media (max-width: 1200px) {
+    nav input {
+        max-width: 400px;
+    }
+
+    #fotoPerfil img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    nav img {
+        width: 120px;
+    }
+
+    nav input {
+        max-width: 300px;
+    }
+
+    #fotoPerfil img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    nav img {
+        margin-bottom: 10px;
+    }
+
+    nav input {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    #fotoPerfil img {
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    nav input {
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    #fotoPerfil img {
+        width: 35px;
+        height: 35px;
+    }
+}
