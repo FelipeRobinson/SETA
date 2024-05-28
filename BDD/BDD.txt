@@ -1,59 +1,33 @@
-
-
 DADO QUE ESTOU   na tela inicial
-
 QUANDO CLICO     No botão de login 
-   
 ENTÃO            deve aparecer uma janela pop-up com a opção de login, cadastrar ou entrar com alguma outra plataforma
 E                devo ter a opção de "esqueci minha senha" para tentar realizar o login novamente
 E                devo ter a opção de  criar uma nova conta
 
-
-
-
 DADO QUE ESTOU   na tela de login e já inseri as credenciais
-
 QUANDO CLICO     em entrar 
-   
 ENTÃO            devo entrar na minha conta
- 
-
-
 
 DADO QUE ESTOU   na tela inicial
-
 QUANDO CLICO     na barra de pesquisa
-   
 ENTÃO		 devo ter a opção de pesquisar serviços
 E		 devo ter sugestão de serviços
 E                devo ter a opção de filtrar as pesquisas por (preço, popularidade)
 
-
-
 DADO QUE ESTOU   na tela inicial
-
 QUANDO CLICO  	 no botão de expandir o menu lateral
-   
 ENTÃO            devo ter a opção de botões com ícones que são categorias
 
-
-
 DADO QUE ESTOU   na tela inicial
-
 QUANDO CLICO     botão da engrenagem no menu lateral
-   
 ENTÃO		 devo ter a opção de personalização
 E                devo ter opções de termos
 E		 devo ter a opção de formas de pagamentos
 E 		 devo ter a opção de idiomas
 E                devo ter a opção de criar uma venda
 
-
-
 DADO QUE ESTOU   na tela inicial
-
 QUANDO CLICO  	 em um serviço
-   
 ENTÃO            devo ter a opção de averiguar imagens do serviço prestado
 E                devo ter a descrição do serviço
 E                devo ter a área de perguntas do usuário que está prestando o serviço
