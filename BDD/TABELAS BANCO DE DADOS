@@ -1,24 +1,20 @@
-TABELAS BANCO DE DADOS
+--============== TABELAS BANCO DE DADOS (SETA) ==============--
 
-
-
-USUÁRIO:
-
+-- USUÁRIO: --
 create table usuarios (
-    id INT identity ,
-    usuario VARCHAR(255) not null,
-    email VARCHAR(255) UNIQUE not null,
-    celular VARCHAR(20),
-    senha VARCHAR(255) not null,
-    cpf VARCHAR(20) UNIQUE not null,
-    endereco VARCHAR(255),
-    data_criacao TIMESTAMP DEFAULT getdate,
+  id INT identity ,
+  usuario VARCHAR(255) not null,
+  email VARCHAR(255) UNIQUE not null,
+  celular VARCHAR(20),
+  senha VARCHAR(255) not null,
+  cpf VARCHAR(20) UNIQUE not null,
+  endereco VARCHAR(255),
+  data_criacao TIMESTAMP DEFAULT getdate,
 
-    CONSTRAINT pk_usuarios PRIMARY KEY (id)
+  CONSTRAINT pk_usuarios PRIMARY KEY (id)
 )
 
-CATEGORIAS:
-
+-- CATEGORIAS: --
 create table categorias (
     id INT identity,
     nome VARCHAR(255) not null,
@@ -26,26 +22,24 @@ create table categorias (
     CONSTRAINT pk_categorias PRIMARY KEY (id)
 )
 
-*A gente coloca as categorias aqui com insert 
+-- A gente coloca as categorias aqui com insert --
 
-SERVIÇOS:
-
+-- SERVIÇOS: --
 CREATE TABLE Servicos (
-    id INT identity,
-    usuario_id INT,
-    titulo VARCHAR(255) not null,
-    descricao TEXT,
-    preco decimal (10, 2),
-    categoria_id int,
-    data_criacao DATETIME DEFAULT getdate(),
+  id INT identity,
+  usuario_id INT,
+  titulo VARCHAR(255) not null,
+  descricao TEXT,
+  preco decimal (10, 2),
+  categoria_id int,
+  data_criacao DATETIME DEFAULT getdate(),
 
-    CONSTRAINT pk_servicos PRIMARY KEY (id),
-    CONSTRAINT fk_servicos_usuario foreign key (usuario_id) REFERENCES Usuarios (id),
-    CONSTRAINT fk_servicos_categoria foreign key (categoria_id) REFERENCES Categorias(id)
+  CONSTRAINT pk_servicos PRIMARY KEY (id),
+  CONSTRAINT fk_servicos_usuario foreign key (usuario_id) REFERENCES Usuarios (id),
+  CONSTRAINT fk_servicos_categoria foreign key (categoria_id) REFERENCES Categorias(id)
 )
 
-CHAT:
-
+-- CHAT: --
 CREATE TABLE Chat (
   id int identity,
   usuario_id INT,
@@ -54,13 +48,11 @@ CREATE TABLE Chat (
   Data_enviada DATETIME DEFAUT getdate()
 
   CONSTRAINT pk_chat PRIMARY KEY (id),
-  CONSTRAINT fk_chat_usuario foreign key (usuario_id) REFERENCES
-Usuarios (id)
+  CONSTRAINT fk_chat_usuario foreign key (usuario_id) REFERENCES Usuarios (id)
   CONSTRAINT fk_chat_destinatario FOREIGN KEY (destinatario_id) REFERENCES Usuarios (id)
 )
 
-AVALIAÇÃO:
-
+-- AVALIAÇÃO: --
 CREATE TABLE Avaliacao ( 
   id INT IDENTITY, 
   servico_id INT, 
@@ -72,9 +64,9 @@ CREATE TABLE Avaliacao (
   CONSTRAINT pk_Avaliacao PRIMARY KEY (id),
   CONSTRAINT fk_avaliacao_servico FOREIGN KEY (servico_id) REFERENCES Servicos (id),
   CONSTRAINT fk_avaliacao_usuario FOREIGN KEY (usuario_id) REFERENCES Usuarios (id) 
+)
 
-PEDIDOS:
-
+-- PEDIDOS: --
 CREATE TABLE Pedidos (
    id INT identity, 
    usuario_id INT,
@@ -84,9 +76,9 @@ CREATE TABLE Pedidos (
    CONSTRAINT pk_Pedidos PRIMARY KEY (id),
    CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (usuario_id) REFERENCES Usuarios (id), 
    CONSTRAINT fk_pedidos_servicos FOREIGN KEY (servico_id) REFERENCES Servicos (id) 
+)
 
-PAGAMENTOS:
-
+-- PAGAMENTOS: --
 CREATE TABLE Pagamentos (
     id INT IDENTITY,
     pedido_id INT,
@@ -96,4 +88,4 @@ CREATE TABLE Pagamentos (
 
     CONSTRAINT pk_Pagamentos PRIMARY KEY (id),
     CONSTRAINT fk_pagamentos_pedidos FOREIGN KEY (pedido_id) REFERENCES Pedidos (id)
-);
+)
