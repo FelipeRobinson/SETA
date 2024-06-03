@@ -16,10 +16,10 @@ create table usuarios (
 
 -- CATEGORIAS: --
 create table categorias (
-    id INT identity,
-    nome VARCHAR(255) not null,
+  id INT identity,
+  nome VARCHAR(255) not null,
 
-    CONSTRAINT pk_categorias PRIMARY KEY (id)
+  CONSTRAINT pk_categorias PRIMARY KEY (id)
 )
 
 -- A gente coloca as categorias aqui com insert --
@@ -68,24 +68,24 @@ CREATE TABLE Avaliacao (
 
 -- PEDIDOS: --
 CREATE TABLE Pedidos (
-   id INT identity, 
-   usuario_id INT,
-   servico_id INT, 
-   data_pedido DATETIME DEFAUT getdate()
-  
-   CONSTRAINT pk_Pedidos PRIMARY KEY (id),
-   CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (usuario_id) REFERENCES Usuarios (id), 
-   CONSTRAINT fk_pedidos_servicos FOREIGN KEY (servico_id) REFERENCES Servicos (id) 
+  id INT identity, 
+  usuario_id INT,
+  servico_id INT, 
+  data_pedido DATETIME DEFAUT getdate()
+
+  CONSTRAINT pk_Pedidos PRIMARY KEY (id),
+  CONSTRAINT fk_pedidos_usuarios FOREIGN KEY (usuario_id) REFERENCES Usuarios (id), 
+  CONSTRAINT fk_pedidos_servicos FOREIGN KEY (servico_id) REFERENCES Servicos (id) 
 )
 
 -- PAGAMENTOS: --
 CREATE TABLE Pagamentos (
-    id INT IDENTITY,
-    pedido_id INT,
-    valor DECIMAL(18, 2),
-    data_pagamento DATETIME DEFAULT GETDATE(),
-    metodo_pagamento VARCHAR(50),
+  id INT IDENTITY,
+  pedido_id INT,
+  valor DECIMAL(18, 2),
+  data_pagamento DATETIME DEFAULT GETDATE(),
+  metodo_pagamento VARCHAR(50),
 
-    CONSTRAINT pk_Pagamentos PRIMARY KEY (id),
-    CONSTRAINT fk_pagamentos_pedidos FOREIGN KEY (pedido_id) REFERENCES Pedidos (id)
+  CONSTRAINT pk_Pagamentos PRIMARY KEY (id),
+  CONSTRAINT fk_pagamentos_pedidos FOREIGN KEY (pedido_id) REFERENCES Pedidos (id)
 )
