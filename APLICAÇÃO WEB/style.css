@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 body {
     background: rgb(243, 243, 243);
     margin: 0;
@@ -13,6 +15,14 @@ nav {
     border-bottom: 1px solid #ddd;
 }
 
+nav #escrito {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    font-size: 25px;
+    font-family: "Rubik", sans-serif;
+}
+
 #logo_2 {
     margin-left: 2%;
     width: 150px;
@@ -21,7 +31,7 @@ nav {
 
 .search_fil {
     margin-top: 15px;
-    margin-left: 40%;
+    margin-left: 0;
 }
 
 .search {
@@ -33,25 +43,26 @@ nav {
     align-items: center;
 }
 
+#botao_filtro {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-left: 1%;
+}
+
 #botao_search {
     width: 50px;
     height: 50px;
     background-color: rgb(70, 99, 230);
     border-radius: 50%;
-    margin-left: 13%;
+    margin-left: 5%;
     align-items: center;
     display: flex;
-
-}
-
-#botao_search .material-symbols-outlined {
-    
-    font-size: 24px;
-    color: rgb(0, 0, 0);
 }
 
 #BarraDePesquisa {
-    width: 450px;
+    width: 440px;
     height: 60px;
     border: none;
     border-radius: 50px;
