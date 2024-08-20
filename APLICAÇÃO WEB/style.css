@@ -24,13 +24,13 @@ nav #escrito {
 }
 
 #logo_2 {
-    margin-left: 2%;
+    margin-left: 0.2%;
     width: 150px;
     font-size: 50px;
 }
 
 .search_fil {
-    margin-top: 15px;
+    margin-top: -0.1%;
     margin-left: 0;
 }
 
@@ -75,4 +75,46 @@ nav #escrito {
 
 #BarraDePesquisa:focus {
     outline: none;
+}
+
+/* ICONS */
+.fa-bars {
+    margin-top: 20%;
+    margin-left: 22%;
+    font-size: 30px;
+    color: white;
+}
+
+.fa-magnifying-glass {
+    margin-top: 4%;
+    margin-left: 20%;
+    font-size: 30px;
+    color: white;
+}
+
+.fa-bell {
+    color: white;
+    font-size: 50px;
+    margin-left: 15px;
+}
+
+.fa-cart-shopping {
+    color: white;
+    font-size: 50px;
+    margin-left: 15px;
+}
+
+/* USER */
+.user {
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.fa-user {
+    margin-left: 18%;
+    margin-top: 13%;
+    font-size: 35px;
 }
