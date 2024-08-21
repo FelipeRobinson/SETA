@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SETA</title>
-    <link rel="stylesheet" type="text/css" href="../SETA/APLICAÇÃO WEB/style.css">
-    <link rel="icon" type="icon" href="../SETA/DESIGN/LOGO.png">
+    <link rel="stylesheet" type="text/css" href="./APLICAÇÃO WEB/style.css">
+    <link rel="icon" type="icon" href="./DESIGN/LOGO.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="script.js"></script>
 </head>
 <body>
     <nav>
-        <img src="../SETA/DESIGN/LOGO(2).png" alt="Logo" id="logo_2">
+        <img src="./DESIGN/desgraca-removebg-preview.png" alt="Logo" id="logo_2">
+        <div id="escrito">Site Empregador de Trabalhadores Autonomos</div>
         <section class="search_fil">
-            <input type="text" name="BarraDePesquisa" id="BarraDePesquisa">
-            <div id="fotoPerfil"> 
-                <img> 
+            <div class="search">
+                <div id="botao_filtro">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <input type="text" name="BarraDePesquisa" placeholder="Ex: Cursos de programação" id="BarraDePesquisa">
+                <div id="botao_search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
             </div>
         </section>
+        <div class="botao_bell">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="botao_cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="user">
+            <i class="fa-solid fa-user" style="color: #4663E6;"></i>
+        </div>
     </nav>
 </body>
 </html>
