@@ -5,65 +5,72 @@ body {
     margin: 0;
 }
 
-nav {
+.superior {
     display: flex;
     align-items: center;
     background: rgb(70, 99, 230);
     padding: 10px 20px;
     width: 97.5vw;
-    height: 70px;
+    height: 45px;
     border-bottom: 1px solid #ddd;
 }
 
-nav #escrito {
+.superior #escrito {
     margin-left: 2%;
     margin-right: 2%;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Rubik", sans-serif;
+}
+
+.esquerda {
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 678px;
+    background-color: rgba(0, 0, 0, 0.3);
+
 }
 
 #logo_2 {
     margin-left: 0.2%;
-    width: 150px;
+    width: 120px;
     font-size: 50px;
 }
 
 .search_fil {
     margin-top: -0.1%;
-    margin-left: 0;
+    margin-left: 15%;
 }
 
 .search {
     background-color: white;
-    width: 600px;
-    height: 62px;
+    width: 500px;
+    height: 40px;
     border-radius: 50px;
     display: flex;
     align-items: center;
 }
 
 #botao_filtro {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     background-color: rgb(70, 99, 230);
     border-radius: 50%;
     margin-left: 1%;
 }
 
 #botao_search {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     background-color: rgb(70, 99, 230);
     border-radius: 50%;
-    margin-left: 5%;
-    align-items: center;
-    display: flex;
+    margin-left: 1.5%;
 }
 
 #BarraDePesquisa {
-    width: 440px;
-    height: 60px;
+    width: 400px;
+    height: 30px;
     border: none;
     border-radius: 50px;
 }
@@ -80,41 +87,41 @@ nav #escrito {
 /* ICONS */
 .fa-bars {
     margin-top: 20%;
-    margin-left: 22%;
-    font-size: 30px;
+    margin-left: 20%;
+    font-size: 20px;
     color: white;
 }
 
 .fa-magnifying-glass {
-    margin-top: 4%;
+    margin-top: 20%;
     margin-left: 20%;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
 }
 
 .fa-bell {
     color: white;
-    font-size: 50px;
+    font-size: 35px;
     margin-left: 15px;
 }
 
 .fa-cart-shopping {
     color: white;
-    font-size: 50px;
+    font-size: 35px;
     margin-left: 15px;
 }
 
 /* USER */
 .user {
     margin-left: 15px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: white;
     border-radius: 50%;
 }
 
 .fa-user {
-    margin-left: 18%;
+    margin-left: 16%;
     margin-top: 13%;
-    font-size: 35px;
+    font-size: 30px;
 }
