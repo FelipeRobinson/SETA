@@ -14,7 +14,6 @@ body {
     width: 97.5vw;
     height: 45px;
     border-bottom: 1px solid #ddd;
-    z-index: 2;
 }
 
 .superior #escrito {
@@ -118,14 +117,3 @@ body {
     margin-top: 15%;
     font-size: 28px;
 }
-
-.lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
