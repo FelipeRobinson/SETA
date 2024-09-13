@@ -8,12 +8,13 @@ body {
 .superior {
     display: flex;
     align-items: center;
+    position: relative;
     background: rgb(70, 99, 230);
     padding: 10px 20px;
     width: 97.5vw;
     height: 45px;
     border-bottom: 1px solid #ddd;
-    border-bottom: 1px solid rgb(170, 170, 170);
+    z-index: 2;
 }
 
 .superior #escrito {
@@ -117,3 +118,14 @@ body {
     margin-top: 15%;
     font-size: 28px;
 }
+
+.lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
