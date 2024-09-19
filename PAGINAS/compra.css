@@ -1,0 +1,231 @@
+
+body {
+    background: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+}
+
+.superior {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: rgb(70, 99, 230);
+    padding: 10px 20px;
+    width: 97.5vw;
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+}
+
+.superior #escrito {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    font-size: 22px;
+    font-family: "Rubik", sans-serif;
+}
+
+#logo_2 {
+    margin-left: 0.2%;
+    width: 120px;
+    font-size: 500px;
+}
+
+.search_fil {
+    margin-top: -0.1%;
+    margin-left: 15%;
+}
+
+.search {
+    background-color: white;
+    width: 500px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#botao_filtro {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-left: 1%;
+}
+
+#botao_search {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-left: 1.5%;
+}
+
+#BarraDePesquisa {
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+}
+
+#BarraDePesquisa[type="text"] {
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+#BarraDePesquisa:focus {
+    outline: none;
+}
+
+/* ICONS */
+.fa-bars {
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-magnifying-glass {
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-bell {
+    color: white;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.fa-cart-shopping {
+    color: white;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+/* USER */
+.user {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.fa-user {
+    margin-left: 18%;
+    margin-top: 15%;
+    font-size: 28px;
+}
+
+.caixa-de-compra {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: solid #337ab7 2px;
+    height: 700px;
+    margin-top: 30px;
+    margin-left: 30px;
+    float: left;
+}
+
+.caixa-de-compra h2{
+    color: green;
+    font-size: 60px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#aviso {
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+#email {
+    font-size: 35px;
+}
+
+#carrinho {
+    max-width: 100%;
+    height: auto;
+}
+
+.caixa-de-compra .icon {
+    margin: 20px 0;
+}
+
+#ver-produto {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+aside {
+    width: 35%;
+}
+
+.chat {
+    background-image: url(fundo\ seta.png);
+    background-size: cover;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 3px solid black;
+    position: absolute;
+    right: 0;
+    position: fixed; /* Mantém o chat fixo no canto */
+    right: 0;
+    top: 64px; /* Para não sobrepor o cabeçalho */
+    width: 35%; /* Define a largura do chat */
+    height: calc(100vh - 60px); /* Preenche a altura, menos o cabeçalho */
+
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc; 
+    background-color: #08277a;
+    width: 100%;
+  }
+  
+#foto-contato {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+  }
+  
+.nome-contato {
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #333; 
+  }
+
+.chat .message {
+    background-color: #e5e5e5;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-message {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.send-btn {
+    background-color: #337ab7;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
