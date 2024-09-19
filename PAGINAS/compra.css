@@ -25,7 +25,7 @@ body {
 }
 
 #logo_2 {
-    margin-left: 0.2%;
+    margin-left: 1%;
     width: 120px;
     font-size: 500px;
 }
@@ -118,6 +118,9 @@ body {
     font-size: 28px;
 }
 
+
+
+/**/
 .caixa-de-compra {
     background-color: white;
     padding: 20px;
