@@ -11,7 +11,7 @@ body {
     position: relative;
     background: rgb(70, 99, 230);
     padding: 10px 20px;
-    width: 97.5vw;
+    width: 97.9vw;
     height: 45px;
     border-bottom: 1px solid #ddd;
 }
@@ -33,6 +33,7 @@ body {
 .search_fil {
     margin-top: -0.1%;
     margin-left: 15%;
+    height: 2vw;
 }
 
 #search {
@@ -42,7 +43,6 @@ body {
     border-radius: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 #botao_filtro {
@@ -117,9 +117,13 @@ body {
     margin-left: 18%;
     margin-top: 15%;
     font-size: 28px;
+    width: 2vw
 }
 
-
+#conjunto{
+    display: flex;
+    margin-left: 24vw;
+}
 
 /**/
 .caixa-de-compra {
@@ -213,7 +217,7 @@ aside {
 
 #foto-contato i {
     font-size: 1.5vw;
-    margin-right: 0.5vw;
+    margin-right: 0vw;
     margin-bottom: 0.3vw;
 }
 
@@ -222,6 +226,13 @@ aside {
     font-weight: bold;
     color: white;
     margin-left: 2vw;
+}
+
+#mais{
+    margin-left: 16vw;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
 }
 
 #campo-mensagem{
