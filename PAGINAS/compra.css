@@ -35,13 +35,14 @@ body {
     margin-left: 15%;
 }
 
-.search {
-    background-color: white;
+#search {
+    background-color: rgb(255, 255, 255);
     width: 500px;
     height: 40px;
     border-radius: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 #botao_filtro {
@@ -128,10 +129,10 @@ body {
     width: 50%;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: solid #337ab7 2px;
+    border: solid #337ab7 5px;
     height: 700px;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 3vw;
+    margin-left: 5vw;
     float: left;
 }
 
@@ -177,58 +178,90 @@ aside {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border-left: 3px solid black;
+    border-left: 5px solid rgb(15, 23, 95);
     position: absolute;
     right: 0;
-    position: fixed; /* Mantém o chat fixo no canto */
+    position: fixed;
     right: 0;
-    top: 64px; /* Para não sobrepor o cabeçalho */
-    width: 35%; /* Define a largura do chat */
-    height: calc(100vh - 60px); /* Preenche a altura, menos o cabeçalho */
+    top: 64px; 
+    width: 35%; 
+    height: calc(100vh - 60px);
 
 }
 
-.cabecalho {
+#cabecalho {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
     background-color: #08277a;
     width: 100%;
-  }
-  
+    height: 4vw;
+    border-radius: 10px;
+}
+
 #foto-contato {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    margin-right: 10px; 
-  }
-  
-.nome-contato {
-    font-size: 16px; 
-    font-weight: bold; 
-    color: #333; 
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 1vw;
 
-.chat .message {
-    background-color: #e5e5e5;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
 }
 
-.input-message {
+#foto-contato i {
+    font-size: 1.5vw;
+    margin-right: 0.5vw;
+    margin-bottom: 0.3vw;
+}
+
+#nome-contato {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    margin-left: 2vw;
+}
+
+#campo-mensagem{
+    display: flex;
+    align-items: center;
+    border: 3px solid #034ea3;
+    border-radius: 25px;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    width: 33.5vw;
+    background-color:white;
+    height: 1.2vw;
+    position: fixed;
+    bottom: 1.5%;
+}
+
+#campo-mensagem button{
+    font-size: 1vw;
+}
+
+#input {
+    margin-bottom: 0.5vw;
+    padding: 2.2%;
+    width: 39vw;
+    border-radius: 20px;
     margin-top: 10px;
+    border: none;
+    outline: none;
+    
 }
 
-.send-btn {
-    background-color: #337ab7;
+#enviar {
+    background-color: #034ea3;
     color: white;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%;
     margin-top: 10px;
     cursor: pointer;
+    position:absolute;
+    right: 10px;     
+    transform: translateY(-12%);
+    width: 6%;
 }

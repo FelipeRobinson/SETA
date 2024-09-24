@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://kit.fontawesome.com/48764efa36.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="icon" type="icon" href="../DESIGN/LOGO.png">
     <link href="compra.css" rel="stylesheet">
@@ -17,28 +17,38 @@
 <body>
     <nav class="superior">
         <img src="../DESIGN/Seta.PNG" alt="Logo" id="logo_2">
-        <div id="escrito">Site Empregador de Trabalhadores Autonomos</div>
-        <section class="search_fil">
-            <div class="search">
-                <div id="botao_filtro">
-                    <i class="fa-solid fa-bars"></i>
+        
+        <div id="escrito">Site Empregador de Trabalhadores Autônomos</div>
+        
+        <div id="conjunto">
+            <section class="search_fil">
+                <div id="search">
+                    <div id="botao_filtro">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    
+                    <input type="text" name="BarraDePesquisa" placeholder="Ex: Cursos de programação" id="BarraDePesquisa">
+                    
+                    <div id="botao_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                 </div>
-                <input type="text" name="BarraDePesquisa" placeholder="Ex: Cursos de programação" id="BarraDePesquisa">
-                <div id="botao_search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+            </section>
+        
+            <div class="botao_bell">
+                <i class="fa-solid fa-bell"></i>
             </div>
-        </section>
-        <div class="botao_bell">
-            <i class="fa-solid fa-bell"></i>
-        </div>
-        <div class="botao_cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-        <div class="user">
-            <i class="fa-solid fa-user" style="color: #4663E6;"></i>
+        
+            <div class="botao_cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        
+            <div class="user">
+                <i class="fa-solid fa-user" style="color: #4663E6;"></i>
+            </div>
         </div>
     </nav>
+    
     <main>
         <div class="caixa-de-compra">
             <h2>Compra concluída</h2>
@@ -51,15 +61,24 @@
             <a href="#" id="ver-produto">Visualizar produto/serviço comprado</a>
         </div>
         <aside>
+
             <div class="chat">
-                <div class="cabecalho">
-                    <i class="fa-solid fa-user" style="color: #4663E6;" id="foto-contato"></i>
-                    <span class="nome-contato">Nome do Contato</span>
-                  </div>
-                <p class="message">Era golpe moh!...</p>
-                <input type="text" placeholder="Digite sua mensagem..." class="input-message">
-                <button class="send-btn">Enviar</button>
+
+                <div id="cabecalho">
+                    <div id="foto-contato">
+                        <i style="color: #08277a;" class="fa-solid fa-user">  </i>
+                    </div>
+                    <p id="nome-contato">Nome do Contato</p>
+                </div>
+                
+
+                <div id="campo-mensagem">
+                    <input type="text" placeholder="Digite sua mensagem..." id="input">
+                    <button id="enviar" class="fa-solid fa-arrow-right"></button>
+                </div>
+
             </div>
+
         </aside>
     </main>
 </body>
