@@ -1,0 +1,194 @@
+body {
+    background: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+}
+
+.superior {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: rgb(70, 99, 230);
+    padding: 10px 20px;
+    width: 97.9vw;
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+}
+
+.superior #escrito {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    font-size: 22px;
+    font-family: "Rubik", sans-serif;
+}
+
+#logo_2 {
+    margin-left: 1%;
+    width: 120px;
+    font-size: 500px;
+}
+
+.search_fil {
+    margin-top: -0.1%;
+    margin-left: 15%;
+    height: 2vw;
+}
+
+#search {
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#botao_filtro {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-left: 1%;
+}
+
+#botao_search {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-left: 1.5%;
+}
+
+#BarraDePesquisa {
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+}
+
+#BarraDePesquisa[type="text"] {
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+#BarraDePesquisa:focus {
+    outline: none;
+}
+
+/* ICONS */
+.fa-bars {
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-magnifying-glass {
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-bell {
+    color: white;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.fa-cart-shopping {
+    color: white;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+/* USER */
+.user {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.fa-user {
+    margin-left: 18%;
+    margin-top: 15%;
+    font-size: 28px;
+    width: 2vw
+}
+
+#conjunto{
+    display: flex;
+    margin-left: 24vw;
+}
+
+#conteudo {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#titulo-servicos {
+    font-size: 2vw;
+    margin-bottom: 20px;
+    color: #08277a;
+}
+
+#servicos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#servico1, #servico2, #servico3 {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#servico1 img, #servico2 img, #servico3 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#titulo-servico1, #titulo-servico2, #titulo-servico3 {
+    font-size: 1.5vw;
+    margin-bottom: 10px;
+    color: #08277a;
+}
+
+#descricao-servico1, #descricao-servico2, #descricao-servico3 {
+    font-size: 1vw;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#botao-negociar1, #botao-negociar2, #botao-negociar3 {
+    padding: 10px 20px;
+    background-color: #08277a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botao-negociar1:hover, #botao-negociar2:hover, #botao-negociar3:hover {
+    background-color: #4663E6;
+}
+
+#rodape {
+    padding: 20px;
+    background-color: #08277a;
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}

@@ -14,6 +14,7 @@ body {
     width: 97.9vw;
     height: 45px;
     border-bottom: 1px solid #ddd;
+    position: fixed;
 }
 
 .superior #escrito {
@@ -135,7 +136,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: solid #337ab7 5px;
     height: 700px;
-    margin-top: 3vw;
+    margin-top: 7vw;
     margin-left: 5vw;
     float: left;
 }
