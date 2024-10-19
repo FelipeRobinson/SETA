@@ -3,6 +3,4 @@ class CATEGORIAS{
    constructor(conexaoBD)
    {   this._bd = conexaoBD;   }
 
-
-
 }

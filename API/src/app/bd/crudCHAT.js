@@ -1,6 +1,5 @@
 class CHAT{
-
-       // construtor da classe
+    // construtor da classe
    constructor(conexaoBD)
    {   this._bd = conexaoBD;   }
 }
