@@ -2,7 +2,7 @@ const bd = require("../../config/database");
 const USUARIO = require("../bd/crudUSUARIO");
 
 class controllerUSUARIO {
-  // método do SELECT FULL
+  // SELECT FULL
   pegaTodosOsDadosDaTabelaCLIENTES() {
     return function(request, response) {
       const clieCRUD = new USUARIO(bd);
@@ -15,8 +15,8 @@ class controllerUSUARIO {
     }
   }
   
-  // método do INSERT 
-  fazInclusaoDeNovosUsuarios() {
+  // INSERT 
+  fazInclusaoDeNovosUsuario() {
     return function(request,response) {
       var dandosvindospostman = request.body;
       var usuario = request.body.usuario;
@@ -33,31 +33,48 @@ class controllerUSUARIO {
       const usuCRUD = new USUARIO(bd);
       usuCRUD.insereNovoUsuarioNaTabelaUsuarios(dados)
       .then(() => {
-        console.log("incluindo um novo cliente na tabela clientes");
-        response.status(200).json({mensagem:"método faz insereNovoClienteNaTabelaClientes()"});
+        console.log("SUCESSO: Novo USUARIO incluso na tabela USUARIOS");
+        response.status(200).json({ mensagem:"método faz insereNovoUsuarioNaTabelaUsuarios()" });
       })
       .catch(erro => console.log(erro));
     }
   }
 
-  // método do UPDATE
-  fazAlteracaoDeDadosDoCliente() {
-    return function(request,response) 
-    {
-     const clieCRUD = new CLIENTES(bd);
-     var { idClie } = request.params;
-     var cpfClie       = request.body.cpfClie;
-     var nomeClie      = request.body.nomeClie;
-     var emailClie     = request.body.emailClie;
-     var dataNiverClie = request.body.dataNiverClie;  
-     const dados = { cpfClie, nomeClie, dataNiverClie, emailClie };
-     console.log("Dados vindo do POSTMAN = " + cpfClie + " - " + nomeClie + " - " + emailClie + " - " + dataNiverClie);
-     clieCRUD.atualizaDadosDoClienteNaTabelaClientes(idClie,dados)
-       .then(() => {
-         console.log("Atualizando dados do cliente na tabela CLIENTES");
-         response.status(200).json({ mensagem: 'Método fazAlteracaoDeDadosDoCliente() OK!'});
-       })
-       .catch(erro => console.log(erro));
+  // UPDATE
+  fazAlteracaoDeDadosDoUsuario() {
+    return function(request,response) {
+      const clieCRUD = new USUARIO(bd);
+      var { id } = request.params;
+      var usuario = request.body.usuario;
+      var email = request.body.email;
+      var celular = request.body.celular;
+      var senha = request.body.senha;
+      var cpf = request.body.cpf;
+      var endereco = request.body.endereco;
+      var data_criacao = request.body.data_criacao;
+      const dados = { usuario, email, celular, senha, cpf, endereco, data_criacao };
+      console.log("Dados vindo do POSTMAN = " + usuario + " - " + email + " - " + celular + " - " + senha + " - " + cpf + " - " + endereco + " - " + data_criacao);
+      clieCRUD.atualizaDadosDoUsuarioNaTabelaUsuarios(id,dados)
+      .then(() => {
+        console.log("SUCESSO: Atualizado USUARIO na tabela USUARIOS");
+        response.status(200).json({ mensagem: 'Método atualizaDadosDoUsuarioNaTabelaUsuarios() OK!'});
+      })
+      .catch(erro => console.log(erro));
     }
   }
+
+  // DELETE
+  fazExclusaoDeDadosDoCliente() {
+    return function(request,response) {
+      const clieCRUD = new USUARIO(bd);
+      var { id } = request.params;
+
+      clieCRUD.excluiDadosDoUsuarioNaTabelaUsuarios(id)
+      .then(() => {
+        console.log("Excluindo um cliente na tabela CLIENTES");
+        response.status(200).json({ mensagem: 'Método excluiDadosDoUsuarioNaTabelaUsuarios() OK!' })
+      })
+      .catch(erro => console.log(erro));
+    };
+  };
 }
