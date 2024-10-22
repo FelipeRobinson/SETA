@@ -3,8 +3,8 @@ class PAGAMENTOS{
    constructor(conexaoBD)
    {   this._bd = conexaoBD;   }
    
-   ListaDadosDaTabelaPagamentos(){
-      return new Promise((Resolve,Reject) => {
+   listaDadosDaTabelaPagamentos(){
+      return new Promise((resolve,reject) => {
          var sql ="SELECT * FROM Pagamentos"
          this._bd.query(sql,function(erro, recordset) {
          if (erro) {
@@ -14,4 +14,18 @@ class PAGAMENTOS{
        });
       })
    }
+   
+   insereDadosNaTabelaPagamentos(dados){
+      return new Promise((resolve,reject) => {
+         var sql = "Insert Into Pagamentos (valor,data_pagamento,metodo_pagamento) VALUES ('" + valor + "', '" + data_pagamento + "', '" + metodo_pagamento + "')";
+      })
+
+   }
 }
+
+
+
+
+valor DECIMAL(18, 2),
+  data_pagamento DATETIME DEFAULT GETDATE(),
+  metodo_pagamento VARCHAR(50),
