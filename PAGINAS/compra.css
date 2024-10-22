@@ -126,9 +126,13 @@ body {
     width: 2vw
 }
 
-#conjunto{
-    display: flex;
-    margin-left: 24vw;
+#conjunto {
+    position: absolute; 
+    right: 0; 
+    height: 100%; 
+    align-content: center;
+    top: 20%; 
+    margin-left: 2%;
 }
 
 /**/
