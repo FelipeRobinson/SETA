@@ -18,14 +18,17 @@ class PAGAMENTOS{
    insereDadosNaTabelaPagamentos(dados){
       return new Promise((resolve,reject) => {
          var sql = "Insert Into Pagamentos (valor,data_pagamento,metodo_pagamento) VALUES ('" + valor + "', '" + data_pagamento + "', '" + metodo_pagamento + "')";
+         this._bd.query(sql,function(erro, recodset) {
+            if(erro){
+               console.log(erro);
+               return reject("Erro na Inserção de novos dados na tabela Pagamentos");
+            
+            }
+            return resolve(recordset);
+         })
       })
-
    }
 }
 
 
 
-
-valor DECIMAL(18, 2),
-  data_pagamento DATETIME DEFAULT GETDATE(),
-  metodo_pagamento VARCHAR(50),
