@@ -30,13 +30,3 @@ class PAGAMENTOS{
       })
    }
 }
-
-
-
-=======
-
-   InsereDadosNaTabelaPagamentos(dados)(
-      return new Promise
-   )
-}
->>>>>>> Stashed changes

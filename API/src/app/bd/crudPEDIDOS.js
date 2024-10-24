@@ -14,5 +14,5 @@ class PEDIDOS{
        });
       })
    }
-   InsereDadosNaTabelaPedidos
+   InsereDadosNaTabelaPedidos()
 }
