@@ -2,8 +2,6 @@ const bd = require("../../config/database");
 const Pedidos = require("../BD/crudAcesso_Usuario");
 
 class controllerPedidos {
-  
-
   pegaTodosOsDadosDaTabelaPedidos() {
     return function(request, response) {
       const pedidosCRUD = new Pedidos(bd);
@@ -19,11 +17,11 @@ class controllerPedidos {
   fazInclusaoDeNovoPedido() {
     return function(request, response) {
         var dadosPedido = request.body;
-        var IdClie = request.body.IdClie;
-        var detalhesPedido = request.body.detalhesPedido;
+        var id = request.body.id;
+        var descricao = request.body.descricao;
 
-        const dados = { IdClie, detalhesPedido };
-        console.log("Dados vindos do POSTMAN = " + dados.IdClie + " - " + dados.detalhesPedido);
+        const dados = { id, descricao };
+        console.log("Dados vindos do POSTMAN = " + dados.id + " - " + dados.descricao);
 
         const pedidosCRUD = new Pedidos(bd);
         pedidosCRUD.insereNovoPedidoNaTabelaPedidos(dados)
@@ -33,9 +31,9 @@ class controllerPedidos {
         })
         .catch(erro => console.log(erro));
     };
-}
+  }
 
-fazExclusaoDePedido() {
+  fazExclusaoDePedido() {
     return function(request, response) {
       const pedidosCRUD = new Pedidos(bd);
       var { idPedido } = request.params;

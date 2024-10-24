@@ -3,6 +3,7 @@ class PAGAMENTOS{
    constructor(conexaoBD)
    {   this._bd = conexaoBD;   }
    
+   // SELECT FULL
    listaDadosDaTabelaPagamentos(){
       return new Promise((resolve,reject) => {
          var sql ="SELECT * FROM Pagamentos"
@@ -14,8 +15,8 @@ class PAGAMENTOS{
        });
       })
    }
-<<<<<<< Updated upstream
-   
+
+   // INSERT
    insereDadosNaTabelaPagamentos(dados){
       return new Promise((resolve,reject) => {
          var sql = "Insert Into Pagamentos (valor,data_pagamento,metodo_pagamento) VALUES ('" + valor + "', '" + data_pagamento + "', '" + metodo_pagamento + "')";
@@ -29,4 +30,19 @@ class PAGAMENTOS{
          })
       })
    }
+
+   // DELETE
+   excluiDadosDoPagamentoNaTabelaPagamentos(id){
+      return new Promise((resolve, reject) => {
+         var sql = "DELETE FROM pagamentos WHERE id = " + id;
+  
+         this._bd.query(sql, function(erro) {
+            if (erro) {
+               console.log(erro);
+               return reject("ERRO: DELETE de pagamento da tabela Pagamentos");
+            }
+            return resolve("SUCESSO: DELETE de pagamento da tabela Pagamentos");
+         });
+      });
+   };
 }

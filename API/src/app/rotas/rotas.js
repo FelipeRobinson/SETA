@@ -13,7 +13,7 @@ module.exports = (aplicacao) => {
     const obj_pagaController = new pagamentosController();
     //const da controler PEDIDOS
     const pedidosController = require("../controller/controllerPEDIDOS");
-    const obj_pediController = new pedidosController();
+    const obj_pediController = new pedidosCntroller();
     //const da controller SERVICOS
     const servicosController = require("../controller/controllerSERVICOS");
     const obj_serviController = new servicosController();
@@ -24,16 +24,41 @@ module.exports = (aplicacao) => {
     // const middlewareCLIENTES = requere('../MODEL/middlewareAVALIACAO')
 
     // ***************************** ROTAS *****************************    
+
     // rota padrão
     aplicacao.get("/",(request,response) => {
     console.log("Acessando rota principal");
     response.status(200).send("Iniciando API em NODEJS");
     });
 
-    //cadastra novos usuarios na tabela USUARIO
-    aplicacao.post("/Usuarios",obj_usuController.fazInclusaoDeNovosUsuarios());
+    //tabela USUARIO
+    aplicacao.post("/Usuario",obj_usuController.fazInclusaoDeNovosUsuarios());
+    aplicacao.get("/Usuario",obj_usuController.pegaTodosOsDadosDaTabelaCLIENTES());
+    aplicacao.put("/Usuario/:id",obj_usuController.fazAlteracaoDeDadosDoUsuario());
+    aplicacao.delete("/Usuario/:id",obj_usuController.fazExclusaoDeDadosDoCliente());
 
-    //
-    aplicacao.put("/Clintes",obj_clieController.fazAlteracaoDeDadosDoCliente());
+    //tabela Serviços
+    aplicacao.post("/servicos",obj_serviController.fazInclusaoDeNovoServico());
+    aplicacao.get("/servicos",obj_serviController.pegaTodosOsDadosDaTabelaServico());
+    aplicacao.put("/servicos/:id",obj_serviController.atualizaDadosDoServicoNaTabelaServicos());
+    aplicacao.delete("/servicos/:id",obj_serviController.fazExclusaoDeServico());
+
+    //tabela Pedidos
+    aplicacao.get("/pedidos",obj_pediController.pegaTodosOsDadosDaTabelaPedidos());
+    aplicacao.post("/pedidos",obj_pediController.fazInclusaoDeNovoPedido());
+    aplicacao.delete("/pedidos/:id",obj_pediController.fazExclusaoDePedido());
+
+    //tabela pagamentos
+    aplicacao.get("/pagamentos",obj_pagaController.pegaTodosOsDadosDaTabelaPagamentos());
+    aplicacao.post("/pagamentos",obj_pagaController.fazInclusaoDeNovoPagamento());
+    aplicacao.delete("/pagamentos/:id",obj_pagaController.fazExclusaoDePagamento());
+
+    //tabela Chat
+    aplicacao.get("/chat",obj_serviController.todosDadosTabelaChat());
+    aplicacao.post("/chat",obj_serviController.fazInclusaoDeNovoServico());
+    aplicacao.delete("/chat/:id",obj_serviController.fazExclusaoDeServico());
+    
+    //tabela Categoria
+    aplicacao.get
 
 }

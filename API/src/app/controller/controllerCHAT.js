@@ -2,7 +2,7 @@ const bd = require("../../config/database");
 const Chat = require("../BD/crudAcesso_Chat");
 
 class controllerChat {
-// nao tem crud aqui 
+    // nao tem crud aqui 
     pegaTodasAsMensagensDoChat() {
         return function(request, response) {
             const chatCRUD = new Chat(bd);

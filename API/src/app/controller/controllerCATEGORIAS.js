@@ -2,7 +2,7 @@ const bd = require("../../config/database");
 const Categorias = require("../BD/crudCategorias");
 
 class controllerCategorias {
-// falta crud desse
+
     pegaTodasAsCategorias() {
         return function(request, response) {
             const categoriasCRUD = new Categorias(bd);
@@ -54,10 +54,9 @@ class controllerCategorias {
         };
     }
 
-    // Método para apagar uma categoria
     fazExclusaoDeCategoria() {
         return function(request, response) {
-            const { id } = request.params; // Obtendo o ID da categoria
+            const { id } = request.params; 
             const categoriasCRUD = new Categorias(bd);
             categoriasCRUD.excluiCategoriaNaTabelaCategorias(id)
                 .then(() => {
