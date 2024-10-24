@@ -14,6 +14,7 @@ class PAGAMENTOS{
        });
       })
    }
+<<<<<<< Updated upstream
    
    insereDadosNaTabelaPagamentos(dados){
       return new Promise((resolve,reject) => {
@@ -32,3 +33,10 @@ class PAGAMENTOS{
 
 
 
+=======
+
+   InsereDadosNaTabelaPagamentos(dados)(
+      return new Promise
+   )
+}
+>>>>>>> Stashed changes

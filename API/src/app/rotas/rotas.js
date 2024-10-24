@@ -34,6 +34,6 @@ module.exports = (aplicacao) => {
     aplicacao.post("/Usuarios",obj_usuController.fazInclusaoDeNovosUsuarios());
 
     //
-        aplicacao.put("/Clintes",obj_clieController.fazAlteracaoDeDadosDoCliente());
+    aplicacao.put("/Clintes",obj_clieController.fazAlteracaoDeDadosDoCliente());
 
 }
