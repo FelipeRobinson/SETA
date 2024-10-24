@@ -35,8 +35,6 @@ class controllerPedidos {
     };
 }
 
-
-
 fazExclusaoDePedido() {
     return function(request, response) {
       const pedidosCRUD = new Pedidos(bd);

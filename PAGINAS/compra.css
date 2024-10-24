@@ -142,7 +142,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: solid #337ab7 5px;
     height: 95%;
-    margin-top: 3%;
+    margin-top: 5%;
     margin-left: 5%;
     margin-right: 5% ;
     float: left;
@@ -212,7 +212,7 @@ body {
     border-radius: 10px;
     padding: 0 1vw; 
     margin-top: 2%
-
+    ;
 }
 
 #foto-contato {
