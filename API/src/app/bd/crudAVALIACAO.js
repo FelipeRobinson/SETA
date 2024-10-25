@@ -1,9 +1,9 @@
 class AVALIACAO{
-   // construtor da classe
+
    constructor(conexaoBD)
    {   this._bd = conexaoBD;   }
    
-   //select da tabela AVALIACAO
+
    ListaDadosDaTabelaAvaliacao(){
       return new Promise((Resolve,Reeject) => {
          var sql ="SELECT * FROM Avaliacao"
@@ -16,7 +16,7 @@ class AVALIACAO{
       })
    }
 
-   //INSERT na tabela AVALIACAO
+
    insereNovaAvaliacaoNaTabelaAvaliacao(dados){
       return new Promise((resolve,reject) => {
          var sql = "Insert Into Pagamentos (nota,servico_id,usuario_id,comentario,data_avaliacao) VALUES ('" + nota + "','"+ servico_id+ "','"+ usuario_id+  "', '" + comentario + "', '" + data_avaliacao + "')";
@@ -31,7 +31,6 @@ class AVALIACAO{
       })
    }
 
-   //UPDATE da tabela AVALIACAO
    alteraAvaliacaoNaTabelaAvaliacao(id, dados){
       return new Promise((resolve, reject) => {
          const {nota,comentario,data_avaliacao  } = dados;
@@ -49,7 +48,6 @@ class AVALIACAO{
       })
    }
 
-   //DELETE avaliacao da tabela AVALIACAO
    apagaAvaliacaoNaTabelaAvaliacao(id){
       return new Promise((resolve, reject) => {
          var sql = "DELETE FROM categorias WHERE id = " + id;

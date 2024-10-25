@@ -1,9 +1,9 @@
 class CATEGORIAS{
-   // construtor da classe
+
    constructor(conexaoBD)
    {   this._bd = conexaoBD;   }
 
-   // SELECT FULL
+
    todosDadosTabelaCategorias(){
       return new Promise((Resolve,Reeject) => {
          var sql ="SELECT * FROM categorias"
@@ -16,7 +16,7 @@ class CATEGORIAS{
       })
    }
 
-   // INSERT
+
    insereNovaCategoriaNaTabelaCategorias(dados){
       return new Promise((resolve,reject) => {
          var sql = "Insert Into categorias (nome) VALUES ('" + nome + "')";
@@ -31,7 +31,7 @@ class CATEGORIAS{
       })
    }
 
-   // UPDATE
+
    atualizaCategoriaNaTabelaCategorias(id, dados){
       return new Promise((resolve,reject) => {
          var sql = "UPDATE categorias SET nome = '" + dados.nome +  "'";
@@ -46,7 +46,6 @@ class CATEGORIAS{
       })
    }
 
-   // DELETE
    excluiCategoriaNaTabelaCategorias(dados){
       return new Promise((resolve, reject) => {
          var sql = "DELETE FROM categorias WHERE id = " + id;

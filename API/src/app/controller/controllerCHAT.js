@@ -1,5 +1,5 @@
 const bd = require("../../config/database");
-const Chat = require("../BD/crudAcesso_Chat");
+const Chat = require("../bd/crudCHAT");
 
 class controllerChat {
     // nao tem crud aqui 

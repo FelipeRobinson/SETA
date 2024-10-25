@@ -1,5 +1,5 @@
 const bd = require("../../config/database");
-const Pagamentos = require("../BD/crudAcesso_Pagamento");
+const Pagamentos = require("../bd/crudPAGAMENTOS");
 
 class controllerPagamentos {
     

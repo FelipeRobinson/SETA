@@ -1,8 +1,9 @@
 const bd = require("../../config/database");
-const Avaliacao = require("../BD/crudAvaliacao");
+const Avaliacao = require("../bd/crudAVALIACAO");
 
-class controllerAvaliacao {
-  
+class controllerAVALIACAO 
+{
+
   fazInclusaoDeNovaAvaliacao() {
     return function(request, response) {
       var dadosAvaliacao = request.body;
@@ -86,4 +87,4 @@ class controllerAvaliacao {
   }
 }
 
-module.exports = new controllerAvaliacao();
+module.exports = controllerAVALIACAO;

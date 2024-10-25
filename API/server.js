@@ -1,6 +1,6 @@
 const aplicacao = require("./src/config/express");
-let porta = 3000;
+let porta = 2855;
 
-aplicacao.lisen(porta, () => {
+aplicacao.listen(porta, () => {
     console.log("API rodando!")
 })

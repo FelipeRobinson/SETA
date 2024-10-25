@@ -1,5 +1,5 @@
 const bd = require("../../config/database");
-const Pedidos = require("../BD/crudAcesso_Usuario");
+const Pedidos = require("../bd/crudPEDIDOS");
 
 class controllerPedidos {
   pegaTodosOsDadosDaTabelaPedidos() {

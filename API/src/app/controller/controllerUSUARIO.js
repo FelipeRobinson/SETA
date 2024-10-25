@@ -3,10 +3,10 @@ const USUARIO = require("../bd/crudUSUARIO");
 
 class controllerUSUARIO {
   // SELECT FULL
-  pegaTodosOsDadosDaTabelaCLIENTES() {
+  pegaTodosOsDadosDaTabelaUsuarios() { // Corrigido o nome da função
     return function(request, response) {
-      const clieCRUD = new USUARIO(bd);
-      clieCRUD.todosDadosTabelaUsuarios()
+      const usuCRUD = new USUARIO(bd);
+      usuCRUD.todosDadosTabelaUsuarios()
       .then((resultados) => {
         console.log(resultados);
         response.status(200).json(resultados);
@@ -15,26 +15,20 @@ class controllerUSUARIO {
     }
   }
   
-  // INSERT 
+  // INSERT
   fazInclusaoDeNovosUsuario() {
-    return function(request,response) {
-      var dandosvindospostman = request.body;
-      var usuario = request.body.usuario;
-      var email = request.body.email;
-      var celular = request.body.celular;
-      var senha = request.body.senha;
-      var cpf = request.body.cpf;
-      var endereco = request.body.endereco;
-      var data_criacao = request.body.data_criacao;
-      
-      //pegar os dados do INSERT via request.body
+    return function(request, response) {
+      var dadosvindospostman = request.body;
+      const { usuario, email, celular, senha, cpf, endereco, data_criacao } = dadosvindospostman;
+
       const dados = { usuario, email, celular, senha, cpf, endereco, data_criacao };
-      console.log("Dados vindos do POSTMAN = " + dados.usuario + " - " + dados.email+ " - " + dados.celular + " - " + dados.senha  + " - "+dados.cpf + " - "+ dados.endereco  + " - " + dados.data_criacao);
+      console.log("Dados vindos do POSTMAN = " + JSON.stringify(dados));
+      
       const usuCRUD = new USUARIO(bd);
       usuCRUD.insereNovoUsuarioNaTabelaUsuarios(dados)
       .then(() => {
         console.log("SUCESSO: Novo USUARIO incluso na tabela USUARIOS");
-        response.status(200).json({ mensagem:"método faz insereNovoUsuarioNaTabelaUsuarios()" });
+        response.status(200).json({ mensagem: "Novo usuario inserido com sucesso!" });
       })
       .catch(erro => console.log(erro));
     }
@@ -42,39 +36,37 @@ class controllerUSUARIO {
 
   // UPDATE
   fazAlteracaoDeDadosDoUsuario() {
-    return function(request,response) {
-      const clieCRUD = new USUARIO(bd);
+    return function(request, response) {
+      const usuCRUD = new USUARIO(bd);
       var { id } = request.params;
-      var usuario = request.body.usuario;
-      var email = request.body.email;
-      var celular = request.body.celular;
-      var senha = request.body.senha;
-      var cpf = request.body.cpf;
-      var endereco = request.body.endereco;
-      var data_criacao = request.body.data_criacao;
+      const { usuario, email, celular, senha, cpf, endereco, data_criacao } = request.body;
+
       const dados = { usuario, email, celular, senha, cpf, endereco, data_criacao };
-      console.log("Dados vindo do POSTMAN = " + usuario + " - " + email + " - " + celular + " - " + senha + " - " + cpf + " - " + endereco + " - " + data_criacao);
-      clieCRUD.atualizaDadosDoUsuarioNaTabelaUsuarios(id,dados)
+      console.log("Dados vindo do POSTMAN = " + JSON.stringify(dados));
+      
+      usuCRUD.atualizaDadosDoUsuarioNaTabelaUsuarios(id, dados)
       .then(() => {
         console.log("SUCESSO: Atualizado USUARIO na tabela USUARIOS");
-        response.status(200).json({ mensagem: 'Método atualizaDadosDoUsuarioNaTabelaUsuarios() OK!'});
+        response.status(200).json({ mensagem: 'Usuário atualizado com sucesso!' });
       })
       .catch(erro => console.log(erro));
     }
   }
 
   // DELETE
-  fazExclusaoDeDadosDoCliente() {
-    return function(request,response) {
-      const clieCRUD = new USUARIO(bd);
+  fazExclusaoDeDadosDoUsuario() { // Corrigido o nome da função
+    return function(request, response) {
+      const usuCRUD = new USUARIO(bd);
       var { id } = request.params;
 
-      clieCRUD.excluiDadosDoUsuarioNaTabelaUsuarios(id)
+      usuCRUD.excluiDadosDoUsuarioNaTabelaUsuarios(id)
       .then(() => {
-        console.log("Excluindo um cliente na tabela CLIENTES");
-        response.status(200).json({ mensagem: 'Método excluiDadosDoUsuarioNaTabelaUsuarios() OK!' })
+        console.log("SUCESSO: Excluído USUARIO na tabela USUARIOS");
+        response.status(200).json({ mensagem: 'Usuário excluído com sucesso!' });
       })
       .catch(erro => console.log(erro));
     };
-  };
+  }
 }
+
+module.exports = controllerUSUARIO;

@@ -1,5 +1,5 @@
 const bd = require("../../config/database");
-const Servicos = require("../BD/crudAcesso_Servico");
+const Servicos = require("../bd/crudSERVICOS");
 
 class controllerServicos {
     

@@ -1,5 +1,5 @@
 const bd = require("../../config/database");
-const Categorias = require("../BD/crudCategorias");
+const Categorias = require("../bd/crudCATEGORIAS");
 
 class controllerCategorias {
 
