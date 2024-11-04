@@ -114,6 +114,7 @@ body {
     color: white;
     font-size: 35px;
     margin-left: 15px;
+    transition: color 0.5s ease;
 }
 
 /* USER */
@@ -129,7 +130,43 @@ body {
     margin-left: 18%;
     margin-top: 15%;
     font-size: 28px;
-    width: 2vw
+    width: 2vw;
+    transition: color 3.8s ease;
+    
+}
+
+/** Animation **/
+
+ @keyframes bounce {
+    0%{
+    transform: rotate(-10deg)
+    }
+    100%{
+    transform: rotate(10deg);
+    } 
+ }
+
+ @-webkit-keyframes bounce{
+    0%{
+        transform: rotate(0)
+        }
+    100%{
+        transform: rotate(10deg);
+        } 
+ }
+
+ .fa-bell:hover {
+    color: rgb(143, 181, 238);
+    font-size: 35px;
+    margin-left: 15px;
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 0.5s infinite alternate; 
+    
+}
+
+
+.fa-cart-shopping:hover{
+    color: rgb(143, 181, 238);
 }
 
 /** Pagina **/
@@ -138,3 +175,4 @@ body {
     background-color: azure;
     align-self: center;
 }
+
