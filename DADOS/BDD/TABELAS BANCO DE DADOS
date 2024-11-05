@@ -89,3 +89,17 @@ CREATE TABLE Pagamentos (
   CONSTRAINT pk_Pagamentos PRIMARY KEY (id),
   CONSTRAINT fk_pagamentos_pedidos FOREIGN KEY (pedido_id) REFERENCES Pedidos (id)
 )
+
+/*
+  -- CARRINHO: --
+  CREATE TABLE Carrinho (
+    id INT IDENTITY,
+    usuario_id int,
+    produto_id int,
+
+    CONSTRAINT pk_Carrinho PRIMARY KEY (id),
+    CONSTRAINT fk_Carinho_Usuarios FOREIGN KEY (cliente_id) REFERENCES usuarios (id),
+
+
+  )
+*/
