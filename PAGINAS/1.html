@@ -16,7 +16,7 @@
 </head>
 <body>
     <nav class="superior">
-        <img src="../DESIGN/Seta.PNG" alt="Logo" id="logo_2">
+        <a href="index.html" id="link"> <img src="../DESIGN/Seta.PNG" alt="Logo" id="logo"></a>
         
         <div id="escrito">Site Empregador de Trabalhadores Autônomos</div>
         
@@ -36,7 +36,7 @@
             </section>
         
             <div class="botao_bell">
-                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-bell" id="notificacao"></i>
             </div>
         
             <div class="botao_cart">
@@ -47,6 +47,21 @@
                 <i class="fa-solid fa-user" style="color: #4663E6;"></i>
             </div>
         </div>
+
+        <div class="panel" id="Painelnotificacao">
+            <p>NOTIFICAÇÃO</p>
+        </div>
+
+        <script>
+            
+const bell = document.getElementById('notificacao');
+const panel = document.getElementById('Painelnotificacao');
+
+
+bell.addEventListener('click', () => {
+    panel.classList.toggle('show');
+});
+        </script>
 
         <div id="geral">
 
