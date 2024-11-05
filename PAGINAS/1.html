@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./APLICAÇÃO WEB/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/48764efa36.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="icon" type="icon" href="../DESIGN/LOGO.png">
+    <link href="1.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Compra concluida</title>
+</head>
+<body>
+    <nav class="superior">
+        <a href="index.html" id="link"> <img src="../DESIGN/Seta.PNG" alt="Logo" id="logo"></a>
+        
+        <div id="escrito">Site Empregador de Trabalhadores Autônomos</div>
+        
+        <div id="conjunto">
+            <section class="search_fil">
+                <div id="search">
+                    <div id="botao_filtro">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    
+                    <input type="text" name="BarraDePesquisa" placeholder="Ex: Cursos de programação" id="BarraDePesquisa">
+                    
+                    <div id="botao_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </section>
+        
+            <div class="botao_bell">
+                <i class="fa-solid fa-bell" id="notificacao"></i>
+            </div>
+        
+            <div class="botao_cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        
+            <div class="user">
+                <i class="fa-solid fa-user" style="color: #4663E6;"></i>
+            </div>
+        </div>
+
+        <div class="panel" id="Painelnotificacao">
+            <p>NOTIFICAÇÃO</p>
+        </div>
+
+        <script>
+            
+const bell = document.getElementById('notificacao');
+const panel = document.getElementById('Painelnotificacao');
+
+
+bell.addEventListener('click', () => {
+    panel.classList.toggle('show');
+});
+        </script>
+
+        <div id="geral">
+
+        </div>
+    </nav>
