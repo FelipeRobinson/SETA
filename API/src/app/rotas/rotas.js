@@ -21,6 +21,14 @@ module.exports = (aplicacao) => {
     //const da controller USUARIO
     const usuarioController = require("../controller/controllerUSUARIO");
     const obj_usuController = new usuarioController();
+    //const da controller CARRINHO 
+    const carrinhoController = require("../controller/controllerCARRINHO");
+    const obj_carriController = new carrinhoController();
+    //const da controller ITEM PEDIDO
+    const controllerItemPedido = require("../controller/controllerITEMPEDIDO");
+    const obj_itemController = new controllerItemPedido();
+
+
 
     // const middlewareCLIENTES = requere('../MODEL/middlewareAVALIACAO')
 
@@ -69,4 +77,14 @@ module.exports = (aplicacao) => {
     aplicacao.post("/avaliacao", obj_avaController.fazInclusaoDeNovaAvaliacao());
     aplicacao.put("/avaliacao/:id", obj_avaController.alteraAvaliacao());
     aplicacao.delete("/avaliacao/:id", obj_avaController.apagaAvaliacao());
+
+    //tabela Carrinho
+    aplicacao.get("/carrinho", obj_carriController.pegaTodosItensCarrinho());
+
+    //tabela ItemPedido
+    aplicacao.get("/itempedido", obj_itemController.pegaTodosItemPedido());
+
+    
+   
+
 }
