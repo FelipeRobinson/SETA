@@ -22,7 +22,34 @@ class controllerCarrinho
     };
   }
 
-  
+  atualizaCategoriaNaTabelaCategorias(id, dados){
+    return new Promise((resolve,reject) => {
+       var sql = "UPDATE categorias SET nome = '" + dados.nome +  "'";
+          sql += "' WHERE id = " + id;
+       this._bd.query(sql,function(erro,recordset) {
+          if(erro){
+             console.log(erro);
+             return reject("Erro na atualização de categorias");
+          }
+          return resolve(recordset);
+       })
+    })
+ }
+
+ excluiCategoriaNaTabelaCarrinho(dados){
+    return new Promise((resolve, reject) => {
+       var sql = "DELETE FROM categorias WHERE id = " + id;
+
+       this._bd.query(sql, function(erro) {
+          if (erro) {
+             console.log(erro);
+             return reject("ERRO: DELETE de categorias da tabela Categorias");
+          }
+          return resolve("SUCESSO: DELETE de categorias da tabela Categorias");
+       });
+    });
+ };
+
 }
 
 module.exports = controllerCarrinho;
