@@ -1,0 +1,286 @@
+
+body {
+    background: rgb(182, 185, 214);
+    margin: 0;
+    padding: 0;
+    padding-top: 3.7%;
+}
+
+.superior {
+    display: flex;
+    align-items: center;
+    background: rgb(70, 99, 230);
+    padding: 10px 20px;
+    width: 100%;
+    height: 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.superior #escrito {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    font-size: 150%;
+    font-family: "Rubik", sans-serif;
+}
+
+#logo_2 {
+    margin-left: 1%;
+    width: 120px;
+    font-size: 500px;
+}
+
+.search_fil {
+    display: flex;
+    align-items: center;
+    
+    height: 2vw
+}
+
+#search {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#botao_filtro {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-left: 2%;
+}
+
+#botao_search {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(70, 99, 230);
+    border-radius: 50%;
+    margin-right: 1%;
+}
+
+#BarraDePesquisa {
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+}
+
+#BarraDePesquisa[type="text"] {
+    font-size: 25px;
+    padding-left: 15px;
+}
+
+#BarraDePesquisa:focus {
+    outline: none;
+}
+
+#conjunto {
+    display: flex; 
+    align-items: center; 
+    margin-left: auto; 
+    padding-right: 2%; 
+}
+
+
+/* ICONS */
+.fa-bars {
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-magnifying-glass {
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 20px;
+    color: white;
+}
+
+.fa-bell {
+    color: white;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+.fa-cart-shopping {
+    color: white;
+    font-size: 35px;
+    margin-left: 15px;
+}
+
+/* USER */
+.user {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.fa-user {
+    margin-left: 18%;
+    margin-top: 15%;
+    font-size: 28px;
+    width: 2vw
+}
+
+
+/**/
+.caixa-de-compra {
+    background-color: white;
+    border-radius: 20px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: solid #337ab7 5px;
+    height: 95%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5% ;
+    float: left;
+}
+
+.caixa-de-compra h2{
+    color: green;
+    font-size: 60px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#aviso {
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+#email {
+    font-size: 35px;
+}
+
+#carrinho {
+    max-width: 100%;
+    height: auto;
+}
+
+.caixa-de-compra .icon {
+    margin: 20px 0;
+}
+
+#ver-produto {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 25px;
+    margin-bottom: 1vw;
+    padding-bottom: 10px; 
+    display: block; 
+}
+
+
+
+
+.chat {
+    background-image: url(fundo\ seta.png);
+    background-size: cover;
+    padding: 0.4%;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid rgb(15, 23, 95);
+    position: absolute;
+    right: 0;
+    position: fixed;
+    right: 0; 
+    width: 35%; 
+    height: 96%;
+
+}
+
+#cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    background-color: #08277a;
+    width: 95%;
+    height: 4vw;
+    border-radius: 10px;
+    padding: 0 1vw; 
+    margin-top: 2%
+    ;
+}
+
+#foto-contato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 1vw;
+}
+
+#foto-contato i {
+    font-size: 1.5vw;
+    margin-right: 0;
+    margin-bottom: 0.3vw;
+}
+
+#nome-contato {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    margin-left: 2vw;
+}
+
+#mais {
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    margin-right: 1vw;
+    /* Remove position: relative e flex-end */
+}
+
+
+#campo-mensagem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #034ea3;
+    border-radius: 25px;
+    padding: 10px;
+    width: 33.5vw;
+    background-color: white;
+    height: 3%; /* Ajustado para uma altura relativa */
+    position: fixed;
+    bottom: 1.5%;
+}
+
+#input {
+    padding: 1vw;
+    width: 80%; 
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    height: 2.5%;
+}
+
+#enviar {
+    background-color: #034ea3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 8%;
+    height: 150%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

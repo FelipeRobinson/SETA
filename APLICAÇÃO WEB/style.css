@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+:root {
+    --fundo: linear-gradient(180deg, #88d6c3, #1b58a6, #fff), linear-gradient(180deg, #c0d1e6, #fff);
+
+}
+
 body {
-    background: rgb(243, 243, 243);
+    background: var(--fundo);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
     margin: 0;
+    padding: 0;
 }
 
 .superior {
