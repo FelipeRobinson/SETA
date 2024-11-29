@@ -30,7 +30,7 @@ module.exports = (aplicacao) => {
 
 
 
-    // const middlewareCLIENTES = requere('../MODEL/middlewareAVALIACAO')
+    //const middlewareCLIENTES = requere('../MODEL/middlewareAVALIACAO')
 
     // ***************************** ROTAS *****************************    
     // rota padrão

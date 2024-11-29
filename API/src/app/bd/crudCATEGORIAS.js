@@ -1,62 +1,68 @@
-class CATEGORIAS{
+const { poolPromise } = require("../../config/database");
 
-   constructor(conexaoBD)
-   {   this._bd = conexaoBD;   }
+class CATEGORIAS {
+   constructor() {}
 
-
-   todosDadosTabelaCategorias(){
-      return new Promise((Resolve,Reeject) => {
-         var sql ="SELECT * FROM categorias"
-         this._bd.query(sql,function(erro, recordset) {
-         if (erro) {
-            console.log(erro);
-            return reject("Erro no SELECT FULL da tabela Categorias");  }
-         return resolve(recordset);
-       });
-      })
-   }
-
-
-   insereNovaCategoriaNaTabelaCategorias(dados){
-      return new Promise((resolve,reject) => {
-         var sql = "Insert Into categorias (nome) VALUES ('" + nome + "')";
-         this._bd.query(sql,function(erro, recodset) {
-            if(erro){
-               console.log(erro);
-               return reject("Erro na Inserção de nova categoria");
-            
-            }
-            return resolve(recordset);
-         })
-      })
-   }
-
-
-   atualizaCategoriaNaTabelaCategorias(id, dados){
-      return new Promise((resolve,reject) => {
-         var sql = "UPDATE categorias SET nome = '" + dados.nome +  "'";
-            sql += "' WHERE id = " + id;
-         this._bd.query(sql,function(erro,recordset) {
-            if(erro){
-               console.log(erro);
-               return reject("Erro na atualização de categorias");
-            }
-            return resolve(recordset);
-         })
-      })
-   }
-
-   excluiCategoriaNaTabelaCategorias(dados){
-      return new Promise((resolve, reject) => {
-         var sql = "DELETE FROM categorias WHERE id = " + id;
-  
-         this._bd.query(sql, function(erro) {
-            if (erro) {
-               console.log(erro);
-               return reject("ERRO: DELETE de categorias da tabela Categorias");
-            }
-            return resolve("SUCESSO: DELETE de categorias da tabela Categorias");
-         });
+   todosDadosTabelaCategorias() {
+      return new Promise(async (resolve, reject) => {
+         try {
+            const pool = await poolPromise;
+            const result = await pool.request().query("SELECT * FROM categorias");
+            resolve(result.recordset);
+         } catch (error) {
+            console.log(error);
+            reject("Erro no SELECT FULL da tabela Categorias");
+         }
       });
-   };
+   }
+
+   insereNovaCategoriaNaTabelaCategorias(dados) {
+      return new Promise(async (resolve, reject) => {
+         const { nome } = dados;
+         try {
+            const pool = await poolPromise;
+            await pool.request()
+               .input('nome', sql.VarChar, nome)
+               .query("INSERT INTO categorias (nome) VALUES (@nome)");
+            resolve("SUCESSO: Inserção de nova categoria");
+         } catch (error) {
+            console.log(error);
+            reject("Erro na Inserção de nova categoria");
+         }
+      });
+   }
+
+   atualizaCategoriaNaTabelaCategorias(id, dados) {
+      return new Promise(async (resolve, reject) => {
+         const { nome } = dados;
+         try {
+            const pool = await poolPromise;
+            await pool.request()
+               .input('id', sql.Int, id)
+               .input('nome', sql.VarChar, nome)
+               .query("UPDATE categorias SET nome = @nome WHERE id = @id");
+            resolve("SUCESSO: Atualização de categoria");
+         } catch (error) {
+            console.log(error);
+            reject("Erro na atualização de categorias");
+         }
+      });
+   }
+
+   excluiCategoriaNaTabelaCategorias(id) {
+      return new Promise(async (resolve, reject) => {
+         try {
+            const pool = await poolPromise;
+            await pool.request()
+               .input('id', sql.Int, id)
+               .query("DELETE FROM categorias WHERE id = @id");
+            resolve("SUCESSO: DELETE de categorias da tabela Categorias");
+         } catch (error) {
+            console.log(error);
+            reject("ERRO: DELETE de categorias da tabela Categorias");
+         }
+      });
+   }
 }
+
+module.exports = CATEGORIAS;

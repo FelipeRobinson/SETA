@@ -1,48 +1,52 @@
-class CHAT{
-    // construtor da classe
-   constructor(conexaoBD)
-   { this._bd = conexaoBD; }
+const { poolPromise } = require("../../config/database");
 
-   //SELECT da tabela CHAT
-   todosDadosTabelaChat(){
-    return new Promise((Resolve,Reeject) => {
-        var sql ="SELECT * FROM chat"
-        this._bd.query(sql,function(erro, recordset) {
-        if (erro) {
-           console.log(erro);
-           return reject("Erro no SELECT FULL da tabela CHAT");  }
-        return resolve(recordset);
-      });
-     })
-   }
-   
-   //INSERT na tabela CHAT
-   insereNovaMensagemNaTabelaChat(dados){
-    return new Promise((resolve,reject) => {
-        var sql = "Insert Into chat (usuario_id,destinatario_id,mensagem,Data_enviada) VALUES ('" + usuario_id + "', '" + destinatario_id + "', '" + mensagem +  "','" + Data_enviada+  "')";
-        this._bd.query(sql,function(erro, recodset) {
-           if(erro){
-              console.log(erro);
-              return reject("Erro na Inserção de novos dados na tabela Pagamentos");
-           
-           }
-           return resolve(recordset);
-        })
-     })
+class CHAT {
+   // construtor da classe
+   constructor() {}
+
+   // SELECT da tabela CHAT
+   async todosDadosTabelaChat() {
+      try {
+         const pool = await poolPromise;
+         const result = await pool.request().query("SELECT * FROM chat");
+         return result.recordset;
+      } catch (error) {
+         console.log(error);
+         throw new Error("Erro no SELECT FULL da tabela CHAT");
+      }
    }
 
-   //DELETE da tabela CHAT
-   excluiMensagemDaTabelaChat(id){
-    return new Promise((resolve, reject) => {
-        var sql = "DELETE  FROM chat WHERE id = " + id;
- 
-        this._bd.query(sql, function(erro) {
-           if (erro) {
-              console.log(erro);
-              return reject("ERRO: DELETE de categorias da tabela Categorias");
-           }
-           return resolve("SUCESSO: DELETE de categorias da tabela Categorias");
-        });
-     });
-  }
+   // INSERT na tabela CHAT
+   async insereNovaMensagemNaTabelaChat(dados) {
+      const { usuario_id, destinatario_id, mensagem, data_enviada } = dados;
+      try {
+         const pool = await poolPromise;
+         await pool.request()
+            .input('usuario_id', sql.Int, usuario_id)
+            .input('destinatario_id', sql.Int, destinatario_id)
+            .input('mensagem', sql.VarChar, mensagem)
+            .input('data_enviada', sql.DateTime, data_enviada)
+            .query("INSERT INTO chat (usuario_id, destinatario_id, mensagem, data_enviada) VALUES (@usuario_id, @destinatario_id, @mensagem, @data_enviada)");
+         return "SUCESSO: Nova mensagem incluída no CHAT";
+      } catch (error) {
+         console.log(error);
+         throw new Error("Erro na Inserção de novos dados na tabela CHAT");
+      }
+   }
+
+   // DELETE da tabela CHAT
+   async excluiMensagemDaTabelaChat(id) {
+      try {
+         const pool = await poolPromise;
+         await pool.request()
+            .input('id', sql.Int, id)
+            .query("DELETE FROM chat WHERE id = @id");
+         return "SUCESSO: DELETE de mensagem da tabela CHAT";
+      } catch (error) {
+         console.log(error);
+         throw new Error("ERRO: DELETE de mensagem da tabela CHAT");
+      }
+   }
 }
+
+module.exports = CHAT;

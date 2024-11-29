@@ -1,66 +1,66 @@
-class AVALIACAO{
+const { poolPromise } = require("../../config/database");
 
-   constructor(conexaoBD)
-   {   this._bd = conexaoBD;   }
-   
+class AVALIACAO {
+   constructor() {}
 
-   ListaDadosDaTabelaAvaliacao(){
-      return new Promise((Resolve,Reeject) => {
-         var sql ="SELECT * FROM Avaliacao"
-         this._bd.query(sql,function(erro, recordset) {
-         if (erro) {
-            console.log(erro);
-            return reject("Erro no SELECT FULL da tabela Avaliacao");  }
-         return resolve(recordset);
-       });
-      })
+   async ListaDadosDaTabelaAvaliacao() {
+      try {
+         const pool = await poolPromise;
+         const result = await pool.request().query("SELECT * FROM Avaliacao");
+         return result.recordset;
+      } catch (error) {
+         console.log(error);
+         throw new Error("Erro no SELECT FULL da tabela Avaliacao");
+      }
    }
 
-
-   insereNovaAvaliacaoNaTabelaAvaliacao(dados){
-      return new Promise((resolve,reject) => {
-         var sql = "Insert Into Pagamentos (nota,servico_id,usuario_id,comentario,data_avaliacao) VALUES ('" + nota + "','"+ servico_id+ "','"+ usuario_id+  "', '" + comentario + "', '" + data_avaliacao + "')";
-         this._bd.query(sql,function(erro, recodset) {
-            if(erro){
-               console.log(erro);
-               return reject("Erro na Inserção de novos dados na tabela Pagamentos");
-            
-            }
-            return resolve(recordset);
-         })
-      })
+   async insereNovaAvaliacaoNaTabelaAvaliacao(dados) {
+      const { nota, servico_id, usuario_id, comentario, data_avaliacao } = dados;
+      try {
+         const pool = await poolPromise;
+         await pool.request()
+            .input('nota', sql.Int, nota)
+            .input('servico_id', sql.Int, servico_id)
+            .input('usuario_id', sql.Int, usuario_id)
+            .input('comentario', sql.VarChar, comentario)
+            .input('data_avaliacao', sql.DateTime, data_avaliacao)
+            .query("INSERT INTO Avaliacao (nota, servico_id, usuario_id, comentario, data_avaliacao) VALUES (@nota, @servico_id, @usuario_id, @comentario, @data_avaliacao)");
+         return "SUCESSO: Nova Avaliação incluída na tabela AVALIACAO";
+      } catch (error) {
+         console.log(error);
+         throw new Error("Erro na Inserção de novos dados na tabela Avaliacao");
+      }
    }
 
-   alteraAvaliacaoNaTabelaAvaliacao(id, dados){
-      return new Promise((resolve, reject) => {
-         const {nota,comentario,data_avaliacao  } = dados;
-  
-         var sql = "UPDATE avaliacao SET nota = '" + dados.nota + "', comentario = '" + dados.comentario + "', comentario = '" + dados.data_avaliacao  + "'";
-            sql += "' WHERE id = " + id;
-  
-         this._bd.query(sql, function(erro) {
-            if (erro) {
-               console.log(erro);
-               return reject("ERRO: UPDATE de CATEGORIA da tabela CATEGORIAS");
-            }
-            return resolve("SUCESSO: UPDATE de CATEGORIA da tabela CATEGORIAS");
-         })
-      })
+   async alteraAvaliacaoNaTabelaAvaliacao(id, dados) {
+      const { nota, comentario, data_avaliacao } = dados;
+      try {
+         const pool = await poolPromise;
+         await pool.request()
+            .input('id', sql.Int, id)
+            .input('nota', sql.Int, nota)
+            .input('comentario', sql.VarChar, comentario)
+            .input('data_avaliacao', sql.DateTime, data_avaliacao)
+            .query("UPDATE Avaliacao SET nota = @nota, comentario = @comentario, data_avaliacao = @data_avaliacao WHERE id = @id");
+         return "SUCESSO: Avaliação alterada na tabela AVALIACAO";
+      } catch (error) {
+         console.log(error);
+         throw new Error("Erro na atualização de Avaliacao");
+      }
    }
 
-   apagaAvaliacaoNaTabelaAvaliacao(id){
-      return new Promise((resolve, reject) => {
-         var sql = "DELETE FROM categorias WHERE id = " + id;
-  
-         this._bd.query(sql, function(erro) {
-            if (erro) {
-               console.log(erro);
-               return reject("ERRO: DELETE de CATEGORIA da tabela CATEGORIAS");
-            }
-            return resolve("SUCESSO: DELETE de CATEGORIA da tabela CATEGORIAS");
-         });
-      });
-   };
+   async apagaAvaliacaoNaTabelaAvaliacao(id) {
+      try {
+         const pool = await poolPromise;
+         await pool.request()
+            .input('id', sql.Int, id)
+            .query("DELETE FROM Avaliacao WHERE id = @id");
+         return "SUCESSO: DELETE de Avaliação da tabela AVALIACAO";
+      } catch (error) {
+         console.log(error);
+         throw new Error("ERRO: DELETE de Avaliação da tabela AVALIACAO");
+      }
+   }
 }
 
 module.exports = AVALIACAO;
